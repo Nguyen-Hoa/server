@@ -39,6 +39,7 @@ func initWorker() {
 
 func main() {
 	initWorker()
+	g_worker.Available = true
 	r := gin.Default()
 
 	r.GET("/stats", func(c *gin.Context) {
@@ -124,6 +125,14 @@ func main() {
 			}
 		}
 		c.JSON(200, containers)
+	})
+
+	r.GET("/available", func(c *gin.Context) {
+		if !g_worker.IsAvailable() {
+			c.JSON(401, "Worker is not unavailable")
+		} else {
+			c.JSON(200, "Worker is ready to send/receive jobs.")
+		}
 	})
 
 	r.Run()
