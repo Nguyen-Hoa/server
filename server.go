@@ -135,4 +135,5 @@ func main() {
 	})
 
 	r.Run()
+	g_worker.Available = true
 }
