@@ -39,6 +39,7 @@ func initWorker() {
 
 func main() {
 	initWorker()
+	g_worker.Available = true
 	r := gin.Default()
 
 	r.GET("/stats", func(c *gin.Context) {
@@ -135,5 +136,4 @@ func main() {
 	})
 
 	r.Run()
-	g_worker.Available = true
 }
