@@ -2,8 +2,10 @@ module worker_server
 
 go 1.17
 
+// replace github.com/Nguyen-Hoa/worker => ../worker
+
 require (
-	github.com/Nguyen-Hoa/worker v1.2.3-0.20220907212901-89384daad759
+	github.com/Nguyen-Hoa/worker v1.2.4-0.20220909181003-b21c5bd331d8
 	github.com/gin-gonic/gin v1.8.1
 )
 
