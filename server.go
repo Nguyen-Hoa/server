@@ -11,6 +11,11 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+type Job struct {
+	Image string   `json:"image"`
+	Cmd   []string `json:"cmd"`
+}
+
 var g_worker = worker.ServerWorker{}
 
 func initWorker() {
@@ -72,10 +77,15 @@ func main() {
 	})
 
 	r.POST("/execute", func(c *gin.Context) {
-		// get container
+		job := Job{}
+		if err := c.BindJSON(&job); err != nil {
+			c.JSON(400, "Failed to parse container")
+		}
 
-		// verify image exists
-		// start container
+		if err := g_worker.StartJob(job.Image, job.Cmd); err != nil {
+			panic(err)
+		}
+		c.JSON(200, "Job started")
 	})
 
 	r.POST("/migrate", func(c *gin.Context) {
@@ -87,8 +97,12 @@ func main() {
 
 	r.POST("/kill", func(c *gin.Context) {
 		// get container
-		// verfiy contaienr is running
-		// kill
+		job := Job{}
+		if err := c.BindJSON(&job); err != nil {
+			c.JSON(400, "Failed to parse container")
+		}
+		g_worker.StopJob(job.Image)
+		c.JSON(200, "Job stopped")
 	})
 
 	r.GET("/running_jobs", func(c *gin.Context) {
