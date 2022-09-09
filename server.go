@@ -6,16 +6,10 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
-	"os/exec"
 
 	worker "github.com/Nguyen-Hoa/worker"
 	"github.com/gin-gonic/gin"
 )
-
-func dockerExecute(cid string) {
-	command := []string{"run", "-d", "--name", cid, "--rm", cid}
-	exec.Command(command[0], command[1:]...)
-}
 
 var g_worker = worker.ServerWorker{}
 
@@ -79,6 +73,7 @@ func main() {
 
 	r.POST("/execute", func(c *gin.Context) {
 		// get container
+
 		// verify image exists
 		// start container
 	})
