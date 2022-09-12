@@ -103,9 +103,11 @@ func main() {
 		}
 
 		if err := g_worker.StopJob(job.Image); err != nil {
+			log.Print(err)
 			c.JSON(400, "Failed to stop job")
+		} else {
+			c.JSON(200, "Job stopped")
 		}
-		c.JSON(200, "Job stopped")
 	})
 
 	r.GET("/running_jobs", func(c *gin.Context) {
