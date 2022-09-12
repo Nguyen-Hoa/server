@@ -101,7 +101,10 @@ func main() {
 		if err := c.BindJSON(&job); err != nil {
 			c.JSON(400, "Failed to parse container")
 		}
-		g_worker.StopJob(job.Image)
+
+		if err := g_worker.StopJob(job.Image); err != nil {
+			c.JSON(400, "Failed to stop job")
+		}
 		c.JSON(200, "Job stopped")
 	})
 
