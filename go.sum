@@ -2,12 +2,12 @@ github.com/Azure/go-ansiterm v0.0.0-20210617225240-d185dfc1b5a1 h1:UQHMgLO+TxOEl
 github.com/Azure/go-ansiterm v0.0.0-20210617225240-d185dfc1b5a1/go.mod h1:xomTg63KZ2rFqZQzSB4Vz2SUXa1BpHTVz9L5PTmPC4E=
 github.com/Microsoft/go-winio v0.5.2 h1:a9IhgEQBCUEk6QCdml9CiJGhAws+YwffDHEMp1VMrpA=
 github.com/Microsoft/go-winio v0.5.2/go.mod h1:WpS1mjBmmwHBEWmogvA2mj8546UReBk4v8QkMxJ6pZY=
-github.com/Nguyen-Hoa/profile v1.2.3 h1:Bhjd/09lUyH9SYoMe7kz6j27X+gr1pO9AY8Og0l8AAs=
-github.com/Nguyen-Hoa/profile v1.2.3/go.mod h1:VVdNlhWM+Purjxi87hCCQnedjOBBE7dqvlKU32Tgydg=
+github.com/Nguyen-Hoa/profile v1.2.4 h1:fFhBW0cPX0MXYgR1O2ncTTw9haUodj7orKERZvY/bB8=
+github.com/Nguyen-Hoa/profile v1.2.4/go.mod h1:VVdNlhWM+Purjxi87hCCQnedjOBBE7dqvlKU32Tgydg=
 github.com/Nguyen-Hoa/wattsup v1.4.1 h1:aiId0st4WGkVkHbeYYjUQYaIJfmyNNX7dtQmc2un9FU=
 github.com/Nguyen-Hoa/wattsup v1.4.1/go.mod h1:J7uo51q7RcgqJe/Xk8YHiytVkY0jlFgoxtvYAlzxiEo=
-github.com/Nguyen-Hoa/worker v1.3.4 h1:SNTGRSJS+memSWUmIWnlCGnqn012iBVnwg25onJNMFk=
-github.com/Nguyen-Hoa/worker v1.3.4/go.mod h1:KTHZxW0gh3F2rj/GL/jlnwKgj2qtbAhbk294JHQCmpo=
+github.com/Nguyen-Hoa/worker v1.3.5 h1:WTE+i2W4Wk9RGgz7Gce+uXIkcDS53KWWKoA3GrBOy3o=
+github.com/Nguyen-Hoa/worker v1.3.5/go.mod h1:prPWuVXC0fyZKIGU0amy4ijABkknqKdkwjb7AJMfHxc=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/creack/pty v1.1.11/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
