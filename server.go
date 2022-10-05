@@ -5,6 +5,8 @@ import (
 	"io"
 	"io/ioutil"
 	"log"
+	"net/http"
+	"net/rpc"
 	"os"
 
 	worker "github.com/Nguyen-Hoa/worker"
@@ -12,14 +14,12 @@ import (
 )
 
 type Job struct {
-	Image string   `json:"image"`
-	Cmd   []string `json:"cmd"`
+	Image    string   `json:"image"`
+	Cmd      []string `json:"cmd"`
+	Duration int      `json:"duration"`
 }
 
-var g_worker = worker.ServerWorker{}
-
-func initWorker() {
-	// Open JSON config
+func main() {
 	jsonFile, err := os.Open("config.json")
 	if err != nil {
 		log.Fatal("Failed to parse configuration file.")
@@ -28,19 +28,25 @@ func initWorker() {
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 	var config worker.WorkerConfig
 	json.Unmarshal([]byte(byteValue), &config)
-	if err = g_worker.Init(config); err != nil {
-		log.Println("Failed to initialize worker!")
-		log.Fatal(err)
+	if config.RPCServer {
+		worker := worker.RPCServerWorker{}
+		worker.Init(config)
+		worker.Available = true
+		rpc.Register(&worker)
+		rpc.HandleHTTP()
+		if err := http.ListenAndServe(worker.RPCPort, nil); err != nil {
+			log.Print(err)
+		}
+	} else {
+		worker := worker.ServerWorker{}
+		worker.Init(config)
+		worker.Available = true
+		runHTTPServer(worker)
 	}
-
-	log.Println("Worker initialized")
 }
 
-func main() {
-	initWorker()
-	g_worker.Available = true
+func runHTTPServer(g_worker worker.ServerWorker) {
 	r := gin.Default()
-
 	r.GET("/stats", func(c *gin.Context) {
 		stats, err := g_worker.Stats()
 		// body, err := json.Marshal(stats)
@@ -82,7 +88,7 @@ func main() {
 			c.JSON(400, "Failed to parse container")
 		}
 
-		if err := g_worker.StartJob(job.Image, job.Cmd); err != nil {
+		if err := g_worker.StartJob(job.Image, job.Cmd, job.Duration); err != nil {
 			panic(err)
 		}
 		c.JSON(200, "Job started")
@@ -111,7 +117,7 @@ func main() {
 	})
 
 	r.GET("/running_jobs", func(c *gin.Context) {
-		containers, err := g_worker.RunningJobs()
+		containers, err := g_worker.GetRunningJobs()
 		if err != nil {
 			log.Println(err)
 			c.JSON(500, "Failed to get running jobs.")
@@ -120,7 +126,7 @@ func main() {
 	})
 
 	r.GET("/running_jobs_stats", func(c *gin.Context) {
-		containerStats, err := g_worker.RunningJobsStats()
+		containerStats, err := g_worker.GetRunningJobsStats()
 		if err != nil {
 			log.Println(err)
 			c.JSON(500, "Failed to get running jobs stats")
