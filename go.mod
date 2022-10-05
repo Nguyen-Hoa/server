@@ -2,7 +2,7 @@ module worker_server
 
 go 1.17
 
-replace github.com/Nguyen-Hoa/worker => ../worker
+// replace github.com/Nguyen-Hoa/worker => ../worker
 
 require (
 	github.com/Nguyen-Hoa/worker v1.3.9
