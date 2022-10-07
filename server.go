@@ -9,15 +9,10 @@ import (
 	"net/rpc"
 	"os"
 
+	job "github.com/Nguyen-Hoa/job"
 	worker "github.com/Nguyen-Hoa/worker"
 	"github.com/gin-gonic/gin"
 )
-
-type Job struct {
-	Image    string   `json:"image"`
-	Cmd      []string `json:"cmd"`
-	Duration int      `json:"duration"`
-}
 
 func main() {
 	jsonFile, err := os.Open("config.json")
@@ -83,7 +78,7 @@ func runHTTPServer(g_worker worker.ServerWorker) {
 	})
 
 	r.POST("/execute", func(c *gin.Context) {
-		job := Job{}
+		job := job.Job{}
 		if err := c.BindJSON(&job); err != nil {
 			c.JSON(400, "Failed to parse container")
 		}
@@ -103,7 +98,7 @@ func runHTTPServer(g_worker worker.ServerWorker) {
 
 	r.POST("/kill", func(c *gin.Context) {
 		// get container
-		job := Job{}
+		job := job.Job{}
 		if err := c.BindJSON(&job); err != nil {
 			c.JSON(400, "Failed to parse container")
 		}
