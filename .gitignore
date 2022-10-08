@@ -2,3 +2,4 @@
 *.json
 wattsup
 wattslog/
+*.sh
