@@ -1,5 +1,8 @@
 *.out
 *.json
 wattsup
+watts-up/
 wattslog/
+test_wattslog/
 *.sh
+dockerfile

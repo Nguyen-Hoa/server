@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -80,13 +79,15 @@ func runHTTPServer(g_worker worker.ServerWorker) {
 	r.POST("/execute", func(c *gin.Context) {
 		job := job.Job{}
 		if err := c.BindJSON(&job); err != nil {
-			c.JSON(400, "Failed to parse container")
+			log.Print(err)
+			c.JSON(400, err.Error())
 		}
 
-		if err := g_worker.StartJob(job.Image, job.Cmd, job.Duration); err != nil {
-			panic(err)
+		Id, err := g_worker.StartJob(job.Image, job.Cmd, job.Duration)
+		if err != nil {
+			c.JSON(500, err.Error())
 		}
-		c.JSON(200, "Job started")
+		c.JSON(200, Id)
 	})
 
 	r.POST("/migrate", func(c *gin.Context) {
@@ -126,16 +127,16 @@ func runHTTPServer(g_worker worker.ServerWorker) {
 			log.Println(err)
 			c.JSON(500, "Failed to get running jobs stats")
 		}
-		var containers map[string]string = make(map[string]string)
+		var containers map[string]interface{} = make(map[string]interface{})
 		if len(containerStats) > 0 {
 			for id, stats := range containerStats {
-				defer stats.Body.Close()
-				bytes, err := io.ReadAll(stats.Body)
 				if err != nil {
 					log.Fatal(err)
 					c.JSON(500, "Failed to read stats for container")
 				} else {
-					containers[id] = string(bytes)
+					var ctrStat = make(map[string]interface{})
+					json.Unmarshal(stats, &ctrStat)
+					containers[id] = ctrStat
 				}
 			}
 		}
