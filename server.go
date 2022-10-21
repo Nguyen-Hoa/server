@@ -43,9 +43,17 @@ func runHTTPServer(g_worker worker.ServerWorker) {
 	r := gin.Default()
 	r.GET("/stats", func(c *gin.Context) {
 		stats, err := g_worker.Stats()
-		// body, err := json.Marshal(stats)
 		if err != nil {
-			c.JSON(500, "Failed to retrieve stats")
+			c.JSON(500, err.Error())
+		} else {
+			c.JSON(200, stats)
+		}
+	})
+
+	r.GET("/reduced-stats", func(c *gin.Context) {
+		stats, err := g_worker.ReducedStats()
+		if err != nil {
+			c.JSON(500, err.Error())
 		} else {
 			c.JSON(200, stats)
 		}

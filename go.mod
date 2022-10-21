@@ -6,14 +6,14 @@ go 1.17
 
 require (
 	github.com/Nguyen-Hoa/job v0.1.0
-	github.com/Nguyen-Hoa/worker v1.6.3
+	github.com/Nguyen-Hoa/worker v1.7.0
 	github.com/gin-gonic/gin v1.8.1
 )
 
 require (
 	github.com/Azure/go-ansiterm v0.0.0-20210617225240-d185dfc1b5a1 // indirect
 	github.com/Microsoft/go-winio v0.6.0 // indirect
-	github.com/Nguyen-Hoa/profile v1.2.5 // indirect
+	github.com/Nguyen-Hoa/profile v1.2.7 // indirect
 	github.com/Nguyen-Hoa/wattsup v1.4.1 // indirect
 	github.com/docker/distribution v2.8.1+incompatible // indirect
 	github.com/docker/docker v20.10.20+incompatible // indirect
