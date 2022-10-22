@@ -1,0 +1,2 @@
+Commit worker
+`docker commit -c 'WORKDIR /server' -c 'CMD [ "/server/server" ]' <ImageID> hoaa/worker:dev`
