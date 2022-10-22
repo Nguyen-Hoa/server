@@ -14,6 +14,8 @@ github.com/Nguyen-Hoa/worker v1.7.1-0.20221022001951-d7853887ea46 h1:JATek/dFFT/
 github.com/Nguyen-Hoa/worker v1.7.1-0.20221022001951-d7853887ea46/go.mod h1:u+7yc/3hrAXpxaFx41yDr5jnb1zXAicCOopHpc/t7yk=
 github.com/Nguyen-Hoa/worker v1.7.1-0.20221022002921-81c2cc76c594 h1:+Wc8Aak/frBXGAr8UjPr9gb2i0SKb/f5tFgPbKedfY0=
 github.com/Nguyen-Hoa/worker v1.7.1-0.20221022002921-81c2cc76c594/go.mod h1:u+7yc/3hrAXpxaFx41yDr5jnb1zXAicCOopHpc/t7yk=
+github.com/Nguyen-Hoa/worker v1.7.1 h1:WXGj1My4SssxFMSLcLSX/Ew73QECpBgSnjBlt6SHXdg=
+github.com/Nguyen-Hoa/worker v1.7.1/go.mod h1:u+7yc/3hrAXpxaFx41yDr5jnb1zXAicCOopHpc/t7yk=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/creack/pty v1.1.11/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
