@@ -159,5 +159,13 @@ func runHTTPServer(g_worker worker.ServerWorker) {
 		}
 	})
 
+	r.GET("/has-power-meter", func(c *gin.Context) {
+		if !g_worker.HasPowerMeter {
+			c.JSON(200, "Power meter is not running")
+		} else {
+			c.JSON(200, "meter running")
+		}
+	})
+
 	r.Run()
 }

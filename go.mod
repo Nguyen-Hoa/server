@@ -6,7 +6,7 @@ go 1.17
 
 require (
 	github.com/Nguyen-Hoa/job v0.1.0
-	github.com/Nguyen-Hoa/worker v1.7.1
+	github.com/Nguyen-Hoa/worker v1.7.3
 	github.com/gin-gonic/gin v1.8.1
 )
 
@@ -16,7 +16,7 @@ require (
 	github.com/Nguyen-Hoa/profile v1.2.7 // indirect
 	github.com/Nguyen-Hoa/wattsup v1.4.1 // indirect
 	github.com/docker/distribution v2.8.1+incompatible // indirect
-	github.com/docker/docker v20.10.20+incompatible // indirect
+	github.com/docker/docker v20.10.21+incompatible // indirect
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.5.0 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
