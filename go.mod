@@ -6,7 +6,7 @@ go 1.17
 
 require (
 	github.com/Nguyen-Hoa/job v0.1.0
-	github.com/Nguyen-Hoa/worker v1.7.3
+	github.com/Nguyen-Hoa/worker v1.7.4
 	github.com/gin-gonic/gin v1.8.1
 )
 
