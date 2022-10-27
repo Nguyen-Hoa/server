@@ -8,12 +8,8 @@ github.com/Nguyen-Hoa/profile v1.2.7 h1:n/QoyrYS343AEWdRoO0ZZdYr5zxjNqr/xO9JXwuL
 github.com/Nguyen-Hoa/profile v1.2.7/go.mod h1:VVdNlhWM+Purjxi87hCCQnedjOBBE7dqvlKU32Tgydg=
 github.com/Nguyen-Hoa/wattsup v1.4.1 h1:aiId0st4WGkVkHbeYYjUQYaIJfmyNNX7dtQmc2un9FU=
 github.com/Nguyen-Hoa/wattsup v1.4.1/go.mod h1:J7uo51q7RcgqJe/Xk8YHiytVkY0jlFgoxtvYAlzxiEo=
-github.com/Nguyen-Hoa/worker v1.7.2 h1:G8eSohUr3EqxMbqo83oZaF2nwc43Z3QV/1No/0A5aBM=
-github.com/Nguyen-Hoa/worker v1.7.2/go.mod h1:u+7yc/3hrAXpxaFx41yDr5jnb1zXAicCOopHpc/t7yk=
-github.com/Nguyen-Hoa/worker v1.7.3 h1:0KAPPPUxLisZas+sW0HQRRgvlWFDttC1NrU9DTJkpt8=
-github.com/Nguyen-Hoa/worker v1.7.3/go.mod h1:u+7yc/3hrAXpxaFx41yDr5jnb1zXAicCOopHpc/t7yk=
-github.com/Nguyen-Hoa/worker v1.7.4 h1:FRtbb3yFS/4D82lS4nPtblpiw5vof//KbgAoXzGd8fk=
-github.com/Nguyen-Hoa/worker v1.7.4/go.mod h1:u+7yc/3hrAXpxaFx41yDr5jnb1zXAicCOopHpc/t7yk=
+github.com/Nguyen-Hoa/worker v1.7.5 h1:81h3fQA2w/ECkyihtQivKPFpiV8dF/jzMG47flM76Ho=
+github.com/Nguyen-Hoa/worker v1.7.5/go.mod h1:u+7yc/3hrAXpxaFx41yDr5jnb1zXAicCOopHpc/t7yk=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/creack/pty v1.1.11/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
