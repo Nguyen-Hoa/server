@@ -14,7 +14,7 @@ require (
 	github.com/Azure/go-ansiterm v0.0.0-20210617225240-d185dfc1b5a1 // indirect
 	github.com/Microsoft/go-winio v0.6.0 // indirect
 	github.com/Nguyen-Hoa/profile v1.2.7 // indirect
-	github.com/Nguyen-Hoa/wattsup v1.4.1 // indirect
+	github.com/Nguyen-Hoa/wattsup v1.4.2 // indirect
 	github.com/docker/distribution v2.8.1+incompatible // indirect
 	github.com/docker/docker v20.10.21+incompatible // indirect
 	github.com/docker/go-connections v0.4.0 // indirect
