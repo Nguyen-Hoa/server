@@ -5,8 +5,8 @@ go 1.17
 // replace github.com/Nguyen-Hoa/worker => ../worker
 
 require (
-	github.com/Nguyen-Hoa/job v0.1.0
-	github.com/Nguyen-Hoa/worker v1.7.5
+	github.com/Nguyen-Hoa/job v0.2.0
+	github.com/Nguyen-Hoa/worker v1.7.6
 	github.com/gin-gonic/gin v1.8.1
 )
 
