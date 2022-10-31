@@ -81,6 +81,7 @@ func runHTTPServer(g_worker worker.ServerWorker) {
 		}
 		c.JSON(200, gin.H{
 			"message": "Power meter stopped",
+			"path":    g_worker.GetMeterPath(),
 		})
 	})
 
