@@ -6,7 +6,7 @@ go 1.17
 
 require (
 	github.com/Nguyen-Hoa/job v0.2.0
-	github.com/Nguyen-Hoa/worker v1.7.8
+	github.com/Nguyen-Hoa/worker v1.7.9
 	github.com/gin-gonic/gin v1.8.1
 )
 
@@ -37,7 +37,7 @@ require (
 	github.com/pelletier/go-toml/v2 v2.0.5 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/power-devops/perfstat v0.0.0-20220216144756-c35f1ee13d7c // indirect
-	github.com/shirou/gopsutil/v3 v3.22.9 // indirect
+	github.com/shirou/gopsutil/v3 v3.22.10 // indirect
 	github.com/sirupsen/logrus v1.9.0 // indirect
 	github.com/tklauser/go-sysconf v0.3.10 // indirect
 	github.com/tklauser/numcpus v0.5.0 // indirect
