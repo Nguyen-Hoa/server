@@ -73,6 +73,7 @@ func runHTTPServer(g_worker worker.ServerWorker) {
 	})
 
 	r.POST("/meter-stop", func(c *gin.Context) {
+		path := g_worker.GetMeterPath()
 		if err := g_worker.StopMeter(); err != nil {
 			c.JSON(500, gin.H{
 				"message": err,
@@ -81,7 +82,7 @@ func runHTTPServer(g_worker worker.ServerWorker) {
 		}
 		c.JSON(200, gin.H{
 			"message": "Power meter stopped",
-			"path":    g_worker.GetMeterPath(),
+			"path":    path,
 		})
 	})
 
