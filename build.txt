@@ -1,2 +1,2 @@
 Commit worker
-`docker commit -c 'WORKDIR /server' -c 'CMD [ "/server/server" ]' ed71804c8745 hoaa/worker`
+`docker commit -c 'WORKDIR /server' -c 'CMD [ "/server/server" ]' b91f355d2d83 hoaa/worker`
