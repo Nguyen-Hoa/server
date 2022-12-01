@@ -1,3 +1,6 @@
+Start worker
+docker run -v /home/ucm_ra/jerry/server/config.json:/config.json -v /var/run/docker.sock:/var/run/docker.sock --device=/dev/ttyUSB0 --publish 8080:8080 --privileged -it hoaa/worker_development
+
 Commit worker
-`docker commit -c 'WORKDIR /server' -c 'CMD [ "/server/server" ]' 8c41d9bada77 hoaa/worker`
-`docker commit 8c41d9bada77 worker-server_development`
+`docker commit -c 'WORKDIR /server' -c 'CMD [ "/server/server" ]' cce902b0593b hoaa/worker`
+`docker commit cce902b0593b worker-server_development`
